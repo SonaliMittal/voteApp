@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-*/node_modules
+**/node_modules
 ../sample-service/node_modules
 /backend/sample-service/node_modules
 
