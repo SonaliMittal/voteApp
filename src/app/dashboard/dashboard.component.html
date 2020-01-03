@@ -1,0 +1,47 @@
+<!-- Candidate Form -->
+<form class="example-form" (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <div class="text-center bg-light">
+  <mat-form-field class="example-full-width mr-5" >
+    <input matInput placeholder="Enter Name" type="text" name="name" ngModel required #name="ngModel">
+    <mat-error *ngIf="name.invalid">Please Fill Name</mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width mr-5">
+      <input matInput placeholder="Enter State" type="text" name="state" ngModel required #state="ngModel">
+      <mat-error *ngIf="state.invalid">Please Fill State</mat-error>
+    </mat-form-field>
+  <mat-form-field class="example-full-width mr-5">
+    <textarea matInput placeholder="Enter about" type="text" name="about" ngModel required #about="ngModel"></textarea>
+    <mat-error *ngIf="about.invalid">Please Fill About</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+</div>
+</form>
+
+<div class="grid-container">
+  <div class="grid-item">
+<div class="col-md-4 mb-2" style="display:inline-grid;" *ngFor="let data of fVote"> 
+<mat-card class="example-card" style="display: inline-block;">
+  
+    <mat-card-header >
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{data.name}}</mat-card-title>
+      <mat-card-subtitle>{{data.state}}</mat-card-subtitle>
+      <div style="margin-left: 80px;">vote count {{data.voteCount}}</div>
+    </mat-card-header>
+    <img mat-card-image src="https://maveric-systems.com/wp-content/uploads/2019/08/dummy-image-testimonial-300x298.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{data.about}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="openSnackBar('Voted', data._id)">Vote</button>
+    </mat-card-actions>
+
+  </mat-card>
+ </div>
+</div>
+</div>
+
+
+  

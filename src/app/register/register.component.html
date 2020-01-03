@@ -1,0 +1,14 @@
+<form class="example-form" (submit)="registerUser(postForm)" #postForm="ngForm">
+    <mat-form-field class="example-full-width mr-5" >
+      <input matInput placeholder="Enter Email" type="email" name="email" ngModel required #email="ngModel">
+      <mat-error *ngIf="email.invalid">Please Fill Email</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width mr-5">
+        <input matInput placeholder="Enter Password" type="password" name="password" ngModel required #password="ngModel">
+        <mat-error *ngIf="password.invalid">Please Fill Password</mat-error>
+      </mat-form-field>
+      <br>
+    <button mat-raised-button color="primary" type="submit">REGISTER</button>
+  </form>
+  

@@ -1,0 +1,19 @@
+<div class="col-md-12">
+<form class="example-form" (submit)="logInUser(postForm)" #postForm="ngForm">
+        <div class="text-center">
+    <mat-form-field class="example-full-width mr-5" >
+      <input matInput placeholder="Enter Email" type="email" name="email" ngModel required #email="ngModel">
+      <mat-error *ngIf="email.invalid; else elseBlock">Please Fill Email</mat-error>
+      <ng-template #elseBlock>{{errorValue}}</ng-template>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width mr-5">
+        <input matInput placeholder="Enter Password" type="password" name="password" ngModel required #password="ngModel">
+        <mat-error *ngIf="password.invalid">Please Fill Password</mat-error>
+      </mat-form-field>
+      <br>
+    <button mat-raised-button color="primary" type="submit">LogIn</button>
+    </div>
+  </form>
+</div>
+  
