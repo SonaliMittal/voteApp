@@ -30,11 +30,11 @@ import { TokenInterceptorService } from './token-interceptor.service';
     FormsModule
   ],
   providers: [AuthGuard,
-  // {
-  //   provide: HTTP_INTERCEPTORS,
-  //   useClass:TokenInterceptorService,
-  //   multi:true
-  // }
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }
 ],
   bootstrap: [AppComponent]
 })

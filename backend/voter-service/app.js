@@ -6,14 +6,14 @@ const cors = require('cors');
 const helmet = require('helmet');
 //const swaggerUi = require('swagger-ui-express');
 const mongoose = require('mongoose');
-// const commonConf = require('./config/config');
+// const commonConf = require('./common/config');
 // const appConf = commonConf.services.sample;
 // let mongoConf = commonConf.databases.mongodb;
 
 // Add custom dependencies
 const config = require('./config/config');
 const sampleRoutes = require('./routes/routes');
-//const authVerifier = require('./helpers/auth-verifier.helper');
+const authVerifier = require('./helpers/auth-verifier.helper');
 
 // process.env.JWT_SECRET = commonConf.JWT_SECRET || config.JWT_SECRET;
 // process.env.RESOURCE_ID = appConf.resourceId || config.resourceId;

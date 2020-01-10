@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private logInService:ServiceService,private route:Router) { }
 private errorValue;
+private ngForm;
   ngOnInit() {
+
   }
   logInUser(user){
     console.log("====");
